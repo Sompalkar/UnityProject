@@ -1,11 +1,11 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
-import authRoutes from './routes/auth.routes';
-import buyerRoutes from './routes/buyer.routes';
-import sellerRoutes from './routes/seller.routes';
+import authRoutes from './routes/auth.routes.js';
+import buyerRoutes from './routes/buyer.routes.js';
+import sellerRoutes from './routes/seller.routes.js';
 import dotenv from 'dotenv';
-import cors from ' cors';
+import cors from 'cors';
 
 
 dotenv.config();
@@ -17,10 +17,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGOURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGOURI, );
 
 // Routes
 app.use('/api/auth', authRoutes);

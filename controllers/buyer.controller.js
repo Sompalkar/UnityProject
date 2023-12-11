@@ -1,6 +1,6 @@
-import Catalog from '../models/catalog.model';
-import Order from '../models/order.model';
-import User from '../models/user.model';
+import Catalog from '../models/catalog.model.js';
+import Order from '../models/order.model.js';
+import User from '../models/user.model.js';
 
 export const getListOfSellers = async (req, res) => {
 

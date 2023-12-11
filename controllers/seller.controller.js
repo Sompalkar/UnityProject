@@ -1,6 +1,6 @@
-import Catalog from '../models/catalog.model';
+import Catalog from '../models/catalog.model.js';
 
-import Order from '../models/order.model';
+import Order from '../models/order.model.js';
 
 
 export const createCatalog = async (req, res) => {

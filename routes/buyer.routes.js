@@ -1,8 +1,8 @@
 import express from 'express';
 
-import { getListOfSellers, getSellerCatalog, createOrder } from '../controllers/buyer.controller';
+import { getListOfSellers, getSellerCatalog, createOrder } from '../controllers/buyer.controller.js';
 
-import verifyToken from '../middlewares/auth.middleware';
+import verifyToken from '../middlewares/auth.middleware.js';
 
 
 const router = express.Router();

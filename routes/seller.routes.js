@@ -2,9 +2,9 @@
 
 import express from 'express';
 
-import { createCatalog, getOrders } from '../controllers/seller.controller';
+import { createCatalog, getOrders } from '../controllers/seller.controller.js';
 
-import verifyToken from '../middlewares/auth.middleware';
+import verifyToken from '../middlewares/auth.middleware.js';
 
 
 
