@@ -1,24 +1,27 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const authRoutes = require('./routes/auth.routes');
-const buyerRoutes = require('./routes/buyer.routes');
-const sellerRoutes = require('./routes/seller.routes');
-const dotenv = require('dotenv');
-const cors = require('cors');
+// server.js
+import express from 'express';
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import authRoutes from './routes/auth.routes';
+import buyerRoutes from './routes/buyer.routes';
+import sellerRoutes from './routes/seller.routes';
+import dotenv from 'dotenv';
+import cors from ' cors';
+
 
 dotenv.config();
 
-
 const app = express();
 const PORT = 3000;
-app.use(cors());
 
+app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
-// console.log(process.env.MONGOURI)
-mongoose.connect(process.env.MONGOURI);
+mongoose.connect(process.env.MONGOURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+});
 
 // Routes
 app.use('/api/auth', authRoutes);
