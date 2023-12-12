@@ -1,22 +1,9 @@
-
-
 import express from 'express';
-
 import { createCatalog, getOrders } from '../controllers/seller.controller.js';
-
-import verifyToken from '../middlewares/auth.middleware.js';
-
-
 
 const router = express.Router();
 
-
-
-router.use(verifyToken);
-
-router.post('/create-catalog', createCatalog);
-
-router.get('/orders', getOrders);
-
+router.post('/create-catalog/:seller_id', createCatalog);
+router.get('/orders/:seller_id', getOrders);
 
 export default router;
