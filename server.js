@@ -11,7 +11,8 @@ import cors from 'cors';
 
 dotenv.config();
 const app = express();
-const PORT = 3000;
+ const port=process.env.PORT || 4000
+
 app.use(cors())
 app.use(bodyParser.json());
 
@@ -33,8 +34,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/buyer', buyerRoutes);
 app.use('/api/seller', sellerRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port :  http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port :  http://localhost:${port}`);
 });
 
 
